@@ -1,3 +1,24 @@
+#ifndef pacman_h
+#define pacman_h
+
+#include <raylib.h>
+
+class Pacman
+{
+public:
+    Pacman();
+    void Update();
+    void Draw() const;
+
+private:
+    Vector2 position;
+    int speedX;
+    int speedY;
+    Texture2D pacmanImage;
+};
+
+#endif /* pacman_h */
+
 /* This is from the repo https://github.com/educ8s/CPP-Space-Invaders-Game-with-raylib
     he made a space invaders game so I will be using examples of his code to learn how
     to work this game using my prior cpp knowledge

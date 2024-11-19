@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "ball.h"
+#include "pacman.h"
 
 int main() 
 {
@@ -12,14 +13,18 @@ int main()
     // Textures MUST be loaded after Window initiailization (OpenGL context is required)
     InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
     SetTargetFPS(60);
+
+    Pacman pacman;
+
     
     while (!WindowShouldClose())
     {
-        ball.Update();
+        // ball.Update();
         
         BeginDrawing();
-            ClearBackground(darkGreen);
-            ball.Draw();
+            ClearBackground(BLACK);
+            // ball.Draw();
+            pacman.Draw();
         EndDrawing();
     }
     
