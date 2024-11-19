@@ -9,6 +9,7 @@ public:
     Pacman();
     void Update();
     void Draw() const;
+    Rectangle getHitBox() const;
 
 private:
     Vector2 position;
@@ -16,6 +17,9 @@ private:
     int speedY;
     Texture2D pacmanImage;
     Rectangle currImage;
+    Rectangle currDirectionImage;
+
+    void updateDirectionBasedOnKeyPressed();
 };
 
 #endif /* pacman_h */

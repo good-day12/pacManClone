@@ -1,5 +1,4 @@
 #include <raylib.h>
-#include "ball.h"
 #include "pacman.h"
 
 int main() 
