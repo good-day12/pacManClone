@@ -1,6 +1,7 @@
 #include "pacman.h"
 
-
+const Rectangle rightMouth = {0, 0, 16, 16};
+const Rectangle closeMouth = {16, 0, 16, 16};
 
 Pacman::Pacman(){
     float x = 100;
@@ -15,11 +16,18 @@ Pacman::Pacman(){
     position = { x, y };
 
     pacmanImage = LoadTexture("graphics/discguy.png");
-    Rectangle openMouth{0, 0, 16, 16};
+    currImage = closeMouth;
 }
 
 void Pacman::Update(){
+    int currentTime = GetTime();
+    
 
+    if (currentTime % 2 == 0){
+        currImage = rightMouth;
+    } else {
+        currImage = closeMouth;
+    }
 }
 
 
@@ -28,7 +36,8 @@ RLAPI ​void​ ​DrawTexturePro​(Texture2D texture, Rectangle source, Recta
     void DrawTextureRec(Texture2D texture, Rectangle source, Vector2 position, Color tint);            // Draw a part of a texture defined by a rectangle
     */
 void Pacman::Draw() const {
-    Rectangle rect{0, 0, 16, 16}; //{x, y, width, height}
+
     // DrawTextureV(pacmanImage, position, YELLOW);
-    DrawTextureRec(pacmanImage, rect, position, YELLOW);
+    DrawTextureRec(pacmanImage, currImage, position, YELLOW);
+
 }

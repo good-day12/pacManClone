@@ -15,6 +15,7 @@ private:
     int speedX;
     int speedY;
     Texture2D pacmanImage;
+    Rectangle currImage;
 };
 
 #endif /* pacman_h */
