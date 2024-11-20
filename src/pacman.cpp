@@ -1,4 +1,4 @@
-#include "pacman.h"
+#include "pacman.hpp"
 #include <iostream>
 
 //Rectangle works like x, y, width, height

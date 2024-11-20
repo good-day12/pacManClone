@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "pacman.h"
+#include "pacman.hpp"
 
 int main() 
 {    

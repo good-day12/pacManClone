@@ -1,9 +1,9 @@
 #ifndef pacman_h
 #define pacman_h
 
-#include <raylib.h>
+#include "entity.hpp"
 
-class Pacman
+class Pacman : public Entity
 {
 public:
     Pacman();
