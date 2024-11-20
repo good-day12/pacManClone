@@ -1,5 +1,5 @@
 #include "pacman.h"
-
+#include <iostream>
 
 //Rectangle works like x, y, width, height
 
@@ -36,14 +36,17 @@ Rectangle Pacman::getHitBox() const{
 
 void Pacman::Update(){
     double currentTime = GetTime();
-    
+
     updateDirectionBasedOnKeyPressed();
+    currImage = currDirectionImage;
 
     if (currentTime - lastTime > .25){
         currImage = CLOSED_MOUTH;
-        lastTime = currentTime + .5;
     }
 
+    if (currentTime - lastTime > .5){
+        lastTime = currentTime;
+    }
     position.x += speedX;
     position.y += speedY;
 
