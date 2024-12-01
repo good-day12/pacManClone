@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "pacman.hpp"
+#include "wall.hpp"
 
 int main() 
 {    
@@ -11,6 +12,7 @@ int main()
     SetTargetFPS(60);
 
     Pacman pacman;
+    Wall wall;
 
     
     while (!WindowShouldClose())
@@ -20,6 +22,7 @@ int main()
         BeginDrawing();
             ClearBackground(BLACK);
             pacman.Draw();
+            wall.Draw();
         EndDrawing();
     }
     

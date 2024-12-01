@@ -11,6 +11,8 @@ public:
     Rectangle getHitBox() const;
 private:
     Vector2 position;
+    Texture2D wallImage;
+    Rectangle thisWall;
 };
 
 #endif /* wall_h */
