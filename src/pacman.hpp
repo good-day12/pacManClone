@@ -1,9 +1,9 @@
 #ifndef pacman_h
 #define pacman_h
 
-#include "entity.hpp"
+#include "movableEntity.hpp"
 
-class Pacman : public Entity
+class Pacman : public MovableEntity
 {
 public:
     Pacman();

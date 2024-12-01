@@ -9,20 +9,17 @@ const Rectangle LEFT_MOUTH =     {0, 16, 16, 16};
 const Rectangle UP_MOUTH =       {0, 32, 16, 16};
 const Rectangle DOWN_MOUTH =     {0, 48, 16, 16};
 const Rectangle CLOSED_MOUTH =   {16, 0, 16, 16};
-static double lastTime = 0;
 
-//helper functions
-Rectangle updateDirectionBasedOnKeyPressed(Rectangle);
+//keep track of timing for animations
+static double lastTime = 0;
 
 Pacman::Pacman(){
     float x = 100;
     float y = 100;
     speedX = 0;
     speedY = 0;
-
     position = { x, y };
-
-    pacmanImage = LoadTexture("graphics/discguy.png");
+    pacmanImage = LoadTexture("Graphics/discguy.png");
     currImage = RIGHT_MOUTH;
     currDirectionImage = currImage;
 }
@@ -36,20 +33,16 @@ Rectangle Pacman::getHitBox() const{
 
 void Pacman::Update(){
     double currentTime = GetTime();
-
     updateDirectionBasedOnKeyPressed();
     currImage = currDirectionImage;
-
     if (currentTime - lastTime > .25){
         currImage = CLOSED_MOUTH;
     }
-
     if (currentTime - lastTime > .5){
         lastTime = currentTime;
     }
     position.x += speedX;
     position.y += speedY;
-
 }
 
 

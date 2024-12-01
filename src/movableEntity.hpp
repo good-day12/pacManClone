@@ -1,17 +1,18 @@
-#ifndef entity_hpp
-#define entity_hpp
+#ifndef movableEntity_hpp
+#define movableEntity_hpp
 
-#include <raylib.h>
-#include <iostream>
+#include "entity.hpp"
 
 /*This class is an interface, or something only meant to 
 be inherited by children class to ensure they have the 
 following functionality*/
 
-class Entity {
+class MovableEntity : public Entity 
+{
 public:
+    void Update();
     void Draw() const;
     Rectangle getHitBox() const;
 };
 
-#endif /* pacman_h */
+#endif /* movableEntity_hpp */
